@@ -1,0 +1,5 @@
+- hosts: boxes
+  user: developer
+  tasks:
+    - name: Write to /tmp
+      action: shell echo Boo $myVar > /tmp/foo.txt
