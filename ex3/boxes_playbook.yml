@@ -1,0 +1,8 @@
+- hosts: boxes
+  user: developer
+  tasks:
+    - name: Write to /tmp
+      action: shell echo "{{myVar}}" > /tmp/foo.txt
+      with_items: myVar
+    - name: Write MOTD
+      template: src=template/motd dest=/etc/motd
