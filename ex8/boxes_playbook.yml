@@ -1,0 +1,4 @@
+- hosts: boxes
+  user: developer
+  tasks:
+    - include: tasks/common.yml
