@@ -1,0 +1,18 @@
+- name: Write to /tmp
+  action: shell echo "{{myVar}}" > /tmp/foo.txt
+  with_items: myVar
+  tags:
+    - tricky
+
+- name: Write MOTD
+  template: src=template/motd dest=/etc/motd
+
+- name: Install NTP
+  action: apt pkg=ntp state=installed
+
+- action: service name=ntp enabled=yes state=started
+
+- name: Create user
+  user: name=uekexam
+
+- authorized_key: user=uekexam key="{{ lookup('file', '/Users/jkanclerz/Desktop/uekexam_rsa.pub') }}"
