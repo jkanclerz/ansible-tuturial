@@ -1,0 +1,4 @@
+- hosts: dev
+  user: developer
+  roles:
+    - common
