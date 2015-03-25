@@ -1,0 +1,4 @@
+- name: Install git
+  action: apt pkg={{ item }} state=installed
+  with_items:
+    - git

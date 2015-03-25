@@ -1,0 +1,4 @@
+- name: Copy vhost
+  template: src=vhost.cfg dest=/etc/apache2/sites-enabled/{{ project['name'] }}.cfg
+  with_items:
+    - project
